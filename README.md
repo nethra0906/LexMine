@@ -1,4 +1,4 @@
-# ⚖️ Legal Precedent Recommendation & Case Outcome Prediction
+# Legal Precedent Recommendation & Case Outcome Prediction
 
 An AI-powered legal analytics system that recommends relevant past cases and predicts case outcomes using data mining and machine learning techniques.
 
