@@ -7,7 +7,6 @@ from src.recommend import recommend
 # ------------------ LOAD DATA ------------------
 df = load_data()
 
-# Remove unknown labels (IMPORTANT)
 if 'outcome' in df.columns:
     df = df[df['outcome'] != "unknown"]
 
@@ -27,7 +26,7 @@ print(df['cluster'].value_counts())
 patterns = run_apriori(df)
 
 print("\nFrequent Patterns:")
-print(patterns.head(10))   # cleaner output
+print(patterns.head(10)) 
 
 # ------------------ RECOMMENDATION ------------------
 query = "hit and run case"
@@ -39,10 +38,8 @@ print(recommendations[['text', 'outcome', 'similarity']])
 
 # ------------------ PREDICTION ------------------
 
-# Clean input (FIX)
 input_clean = clean_text(query)
 
-# Vectorize (NO .toarray())
 input_vec = vectorizer.transform([input_clean])
 
 prediction = model.predict(input_vec)[0]
