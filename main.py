@@ -30,7 +30,7 @@ print("\nFrequent Patterns:")
 print(patterns.head(10))   # cleaner output
 
 # ------------------ RECOMMENDATION ------------------
-query = "property dispute in family"
+query = "hit and run case"
 
 recommendations = recommend(query, vectorizer, X, df)
 
