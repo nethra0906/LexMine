@@ -19,14 +19,8 @@ model = train(X, df['outcome'])
 # ------------------ CLUSTERING ------------------
 df['cluster'] = cluster_data(X)
 
-print("\nCluster Distribution:")
-print(df['cluster'].value_counts())
-
 # ------------------ APRIORI ------------------
 patterns = run_apriori(df)
-
-print("\nFrequent Patterns:")
-print(patterns.head(10)) 
 
 # ------------------ RECOMMENDATION ------------------
 query = "hit and run case"
