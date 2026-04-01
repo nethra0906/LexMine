@@ -23,7 +23,7 @@ df['cluster'] = cluster_data(X)
 patterns = run_apriori(df)
 
 # ------------------ RECOMMENDATION ------------------
-query = "divorce case involving child custody and property division"
+query = "stabbing case"
 
 recommendations = recommend(query, vectorizer, X, df)
 
