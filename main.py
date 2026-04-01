@@ -23,12 +23,21 @@ df['cluster'] = cluster_data(X)
 patterns = run_apriori(df)
 
 # ------------------ RECOMMENDATION ------------------
-query = "hit and run case"
+query = "divorce case involving child custody and property division"
 
 recommendations = recommend(query, vectorizer, X, df)
 
 print("\nRecommended Cases:")
-print(recommendations[['text', 'outcome', 'similarity']])
+
+if isinstance(recommendations, str):
+    print(recommendations)
+else:
+    cols = ['text', 'outcome']
+    
+    if 'similarity' in recommendations.columns:
+        cols.append('similarity')
+    
+    print(recommendations[cols])
 
 # ------------------ PREDICTION ------------------
 

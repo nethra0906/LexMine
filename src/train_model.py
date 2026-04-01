@@ -17,9 +17,5 @@ def train(X, y):
     y_pred = model.predict(X_test)
     
     acc = accuracy_score(y_test, y_pred)
-    print(f"\nModel Accuracy: {acc:.2f}")
-    
-    print("\nClassification Report:")
-    print(classification_report(y_test, y_pred))
-    
+ 
     return model
